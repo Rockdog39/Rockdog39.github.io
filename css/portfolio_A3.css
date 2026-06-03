@@ -1,0 +1,250 @@
+/*
+    portfolio_A3.css - Stylesheet for Rory Rock's Portfolio Website
+*/
+/* Universal selector to ensure consistent styling across all elements */
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* set background color and font for the entire webpage, using a gradient for a more visually appealing look */
+body {
+    margin: 0;    
+    background-color: #DCDCDD;
+    background-image: linear-gradient(to bottom, #DCDCDD, #FFFFFF);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* use a grid layout for the main container to organize the header, left column, right column, and footer */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "left-column right-column"
+        "footer footer";
+    grid-template-columns: 30% 70%;
+}
+
+/* define the styles for each section of the grid layout */
+.header {
+    grid-area: header;
+}
+
+/* styles for the left column, which contains the sidebar and image */
+.left-column {
+    grid-area: left-column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* styles for the sidebar within the left column, using flexbox to arrange the content vertically with spacing */
+.left-column #racing_sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  
+}
+
+/* ensure the sidebar is aligned to the top of the left column, keeping it visually consistent and easy to navigate */
+.left-column .sidebar {
+    align-self: flex-start;
+}
+
+/* styles for the image in the left column, making it responsive and adding some visual enhancements like rounded corners and a shadow effect */
+.left-column img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.left-column img:hover {
+    transform: scale(1.03);
+}
+
+.left-column .sidebar h2 {
+    background-color: #c5c3c6;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* styles for the list within the sidebar, removing default list styling and adding padding and spacing for better readability */
+.left-column .sidebar ul {
+    list-style-type: none;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-column a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.left-column a:hover {
+  background-color: #c5c3c6;
+  color: #000;
+}
+
+/* styles for the right column, which contains the main content of the webpage, adding padding for better readability */
+.right-column {
+    grid-area: right-column;
+    padding: 20px;
+}  
+
+.footer {
+    grid-area: footer;
+}
+
+/* styles for the page header, including background color, height, padding, text color, and layout using flexbox to align the content */
+#page-header {
+    background-color: #4C5C68;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+/* styles for the logo within the page header, making it responsive and adding some visual enhancements like rounded corners */
+#logo img {
+    height: 125px;
+    border-radius: 10px;
+    width: auto;
+    left: 20px;
+    top: 35px;
+    position: absolute;
+}
+
+/* styles for the navigation list within the page header, removing default list styling and using flexbox to arrange the navigation links horizontally with spacing */
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#nav-list li a {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    background-color: #1985A1;
+    border-radius: 15px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+#nav-list li a:hover {
+    background-color: #DCDCDD;
+    color: black;
+}
+
+/* News Letter Form Styles */
+
+#news-letter {
+    display: grid;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.nl-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.nl-field label, .nl-field legend {
+    font-weight: bold;
+}
+
+.options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+input[type="submit"], input[type="reset"] {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    background-color: #1985A1;
+    border-radius: 15px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #DCDCDD;
+    color: black;
+}
+
+/* Resume Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1985A1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* styles for the page footer, including background color, text color, alignment, font style, and layout using flexbox to space the content */
+.page-footer {
+    background-color: #4C5C68;
+    color: white;
+    text-align: left;
+    font-style: italic;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 2px solid black;
+}

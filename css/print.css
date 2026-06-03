@@ -1,0 +1,15 @@
+/* Print Styles, used for when printing the webpage */
+
+/* remove the background and set text to black + larger font for better readability */
+body {
+    background: white;
+    color: black;
+    font-size: 14pt;
+}
+
+/*remove the header which contains the logo and navigation, as they are not needed for print and may take up 
+unnecessary space */
+#page-header {
+    display: none;
+}
+
