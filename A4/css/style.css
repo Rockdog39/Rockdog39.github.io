@@ -1,0 +1,475 @@
+/*
+    portfolio_A3.css - Stylesheet for Rory Rock's Portfolio Website
+*/
+/* Universal selector to ensure consistent styling across all elements */
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* set background color and font for the entire webpage, using a gradient for a more visually appealing look */
+body {
+    margin: 0;    
+    background-color: #DCDCDD;
+    background-image: linear-gradient(to bottom, #DCDCDD, #FFFFFF);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* use a grid layout for the main container to organize the header, left column, right column, and footer */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main main"
+        "footer footer";
+    min-height: 100vh;
+}
+
+/* define the styles for each section of the grid layout */
+.header {
+    grid-area: header;
+}
+
+/* styles for the main content area */
+main {
+    grid-area: main;
+}
+
+/* Sets the layout of main sections to have two columns, one narrow and one wide. */
+.portfolio-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+/* Swap the layout so my narrow column now opposite. */
+.portfolio-section-reverse {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+/* styles for the left column, which contains the sidebar and image */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+}
+
+/* styles the right column in main */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* styles for the image in the columns, making it responsive and adding some visual enhancements like rounded corners and a shadow effect */
+.left-column img, .right-column img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.left-column img:hover, .right-column img:hover {
+    transform: scale(1.03);
+}
+
+/* styles for my shopify store link image */
+#rock-shopify {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+/* give some room around the Trinket window */
+#trinket iframe {
+    width: 100%;
+    height: 600px;
+    border: 2px solid;
+    display: block;
+}
+
+#trinket {
+    padding: 40px;
+}
+
+/* styles the menus on resume and webskills pages */
+.section-menu {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* styles for the list within the sidebar, removing default list styling and adding padding and spacing for better readability */
+.left-column .sidebar ul {
+    list-style-type: none;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-column a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.left-column a:hover {
+  background-color: #c5c3c6;
+  color: #000;
+}
+
+/* style the footer */
+.page-footer {
+    grid-area: footer;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* styles for the page header, including background color, height, padding, text color, and layout using flexbox to align the content */
+#page-header {
+    align-content: center;
+    background-color: #4C5C68;
+    min-height: 130px;
+    color: white;
+    border: 2px solid black;
+    /* padding: 0 2rem; */
+}
+
+/* styles below are for my new navbar inc logo + newsletter button */
+#logo img {
+    height: 100px;
+    width: auto;
+}
+
+.navbar {
+    display: grid;
+    grid-template-areas: "logo nav newsletter";
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+#logo { grid-area: logo; }
+.nav-links { grid-area: nav; }
+.newsletter { grid-area: newsletter; }
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 25px;
+    font-size: 1.2em;
+}
+
+.navbar ul a:hover {
+    color: #c4eb17;
+    transition: all 0.3s ease;
+}
+
+.newsletter a {
+    display: block;
+    background-color: #c4eb17;
+    color: white;
+    font-weight: 400;
+    padding: 5px 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;    
+    text-transform: uppercase;
+}
+
+.newsletter a:hover {
+    background-color: #111111;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8); 
+    transform: scale(1.15); 
+}
+
+/* News Letter Form Styles */
+
+#news-letter {
+    display: grid;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.nl-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.nl-field label, .nl-field legend {
+    font-weight: bold;
+}
+
+.options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+input[type="submit"], input[type="reset"] {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    background-color: #1985A1;
+    border-radius: 15px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #DCDCDD;
+    color: black;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+.required-note {
+    font-style: italic;
+    font-size: small;
+}
+
+/* Resume Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1985A1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* styles for the page footer, including background color, text color, alignment, 
+font style, and layout using flexbox to space the content */
+.page-footer {
+    background-color: #4C5C68;
+    color: white;
+    font-style: italic;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+
+.page-footer div {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+/* style the social icons in footer */
+.contact-container {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-container a {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2.0em;
+    transition: color 0.3s ease;
+}
+
+.contact-container a:hover {
+    color: #c4eb17;
+    transition: color 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.8); 
+    transform: scale(1.15); 
+}
+
+.portfolio-section-img {
+    width: 100%; 
+    max-width: 800px; 
+}
+
+/* Styles for the video wrapper to maintain a 16:9 aspect ratio */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+/* Force the iframe to fill the wrapper */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+figcaption {
+    margin-top: 8px;
+}
+
+/* Styles for my js intersection observer animation as elements come into viewport */
+.portfolio-section, 
+.portfolio-section-reverse {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 600ms ease;
+}
+
+.portfolio-section-reverse {
+    transform: translateX(50px);
+}
+
+.portfolio-section.show, 
+.portfolio-section-reverse.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Mobile phones responsive web design */
+@media only screen and (max-width: 600px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "main"
+            "footer";
+        grid-template-columns: 100%;
+    }
+
+    .portfolio-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Force the wrapper to fill the window viewport */
+    .video-container {
+        width: 100%; 
+    }
+
+    #trinket {
+        padding: 5px;
+        width: 100%;
+    }
+
+    #trinket iframe {
+        height: 450px;
+    }
+
+    .portfolio-section-reverse {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    }
+
+    /* change layout of nav to one column on mobiles */
+    .navbar {
+        grid-template-areas:
+            "logo"
+            "nav"
+            "newsletter";
+        grid-template-columns: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .newsletter {
+        padding: 1rem 0;
+    }
+    #news-letter {
+        padding: 0 1rem;
+    }
+}
+
+/* Print Styles, used for when printing the webpage */
+
+@media print {
+
+    /* remove the background and set text to black + larger font for better readability */
+    body {
+        background: white;
+        color: black;
+        font-size: 14pt;
+    }
+
+    /*remove the header which contains the logo and navigation, as they are not needed for print and may take up 
+    unnecessary space */
+    #page-header {
+        display: none;
+    }
+}
